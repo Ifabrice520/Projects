@@ -1,0 +1,24 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "css": "css"
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.html": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "class\\s*=\\s*\"([^\"]*)\"",
+    "class:\\s*\"([^\"]*)\"",
+    "tw`([^`]*)",
+    "tw\\(([^)]*)\\)",
+    "tw=\"([^\"]*)\"",
+    "tw={\"([^\"}]*)"
+  ]
+}

@@ -125,10 +125,24 @@ function updateFilterLabels() {
   completedBtn.textContent = `Completed (${tasks.filter(t => t.completed).length})`;
 }
 
-// const darkToggle = document.getElementById('dark-toggle');
-// const html = document.documentElement;
+const darkToggle = document.getElementById('dark-toggle');
+const html = document.documentElement;
 
-// darkToggle.addEventListener('click', () => {
-//   html.classList.toggle('dark');
-//   updateDarkIcon();
-// });
+// Load saved mode
+if (localStorage.getItem('theme') === 'dark') {
+  html.classList.add('dark');
+} else {
+  html.classList.remove('dark');
+}
+
+darkToggle.addEventListener('click', () => {
+  html.classList.toggle('dark');
+
+  // Save preference
+  if (html.classList.contains('dark')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
+
