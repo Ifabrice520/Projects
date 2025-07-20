@@ -37,7 +37,7 @@ to-do-list/
 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/to-do-list.git
+git clone https://github.com/Ifabrice520/Projects
 cd to-do-list
 
 ```
