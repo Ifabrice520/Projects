@@ -1,87 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="./style.css" rel="stylesheet">
-  <title>Unit Converter</title>
-</head>
-<body class="bg-blue-50">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="./style.css" rel="stylesheet" />
+    <title>Unit Converter</title>
+  </head>
+  <body class="bg-blue-50">
+    <div
+      class="container w-170 h-140 bg-white mx-auto p-8 rounded-lg shadow-lg mt-10 flex flex-col items-center"
+    >
+      <div class="flex items-center justify-center mb-4">
+        <span
+          class="bg-gradient-to-b from-blue-600 to-violet-500 rounded-lg p-3 mr-4 flex items-center justify-center"
+        >
+          <i class="fa fa-calculator text-white text-8xl"></i>
+        </span>
 
-  <div class="container w-170 h-140 bg-white mx-auto p-8 rounded-lg shadow-lg mt-10 flex flex-col items-center">
+        <h1
+          class="text-3xl font-extrabold bg-gradient-to-b from-blue-600 to-violet-500 bg-clip-text text-transparent"
+        >
+          Unit Converter
+        </h1>
+      </div>
 
-    <div class="flex items-center justify-center mb-4">
+      <p class="text-md text-gray-600 text-center mb-8">
+        Convert between different units with real-time calculations
+      </p>
 
-      <span class="bg-gradient-to-b from-blue-600 to-violet-500 rounded-lg p-3 mr-4 flex items-center justify-center">
-        <i class="fa fa-calculator text-white text-8xl"></i>
-      </span>
+      <div class="w-full mb-8">
+        <nav class="flex justify-between bg-gray-100 rounded-xl p-1 space-x-3">
+          <button
+            class="tab-btn flex-1 bg-gradient-to-r from-blue-600 to-violet-500 text-white font-semibold px-6 py-1 rounded-sm shadow transition hover:opacity-90 focus:outline-none"
+            data-tab="length"
+          >
+            Length
+          </button>
+          <button
+            class="tab-btn flex-1 bg-gray-100 text-gray-500 font-semibold px-6 py-1 rounded-sm transition hover:bg-gray-200 focus:outline-none"
+            data-tab="temperature"
+          >
+            Temperature
+          </button>
+          <button
+            class="tab-btn flex-1 bg-gray-100 text-gray-500 font-semibold px-6 py-1 rounded-sm transition hover:bg-gray-200 focus:outline-none"
+            data-tab="weight"
+          >
+            Weight
+          </button>
+          <button
+            class="tab-btn flex-1 bg-gray-100 text-gray-500 font-semibold px-6 py-1 rounded-sm transition hover:bg-gray-200 focus:outline-none"
+            data-tab="time"
+          >
+            Time
+          </button>
+        </nav>
+      </div>
 
-      <h1 class="text-3xl font-extrabold bg-gradient-to-b from-blue-600 to-violet-500 bg-clip-text text-transparent">Unit Converter</h1>
+      <div class="w-full gap-8 mt-7">
+        <div class="flex flex-col w-1/2">
+          <span class="text-sm font-medium mb-2">From</span>
+          <select
+            name="initialVal"
+            id="initialVal"
+            class="h-9 px-4 py-2 mb-2 border border-gray-400 shadow-md bg-blue-50 rounded-md"
+          >
+            <option value="km">Kilometers (km)</option>
+            <option value="mi">Miles (mi)</option>
+            <option value="m">Meters (m)</option>
+            <option value="ft">Feet (ft)</option>
+            <option value="cm">Centimeters (cm)</option>
+            <option value="in">Inches (in)</option>
+          </select>
+          <input
+            type="text"
+            name="input"
+            id="input"
+            placeholder="Enter value"
+            class="h-9 px-4 py-2 border border-gray-400 shadow-md bg-blue-50 rounded-md"
+          />
+        </div>
+
+        <div
+          class="flex items-center justify-end mb-16"
+          style="margin-right: 90px; margin-top: -60px"
+        >
+          <button
+            class="bg-gradient-to-r from-blue-700 to-violet-500 h-10 w-10 rounded-full flex items-center justify-center text-white shadow-lg cursor-pointer"
+            id="shiftBtn"
+          >
+            <i class="fa fa-exchange"></i>
+          </button>
+        </div>
+
+        <div class="flex flex-col w-1/2 ml-auto">
+          <span class="text-md font-medium mb-2">To</span>
+          <select
+            name="convertedVal"
+            id="convertedVal"
+            class="h-9 px-4 py-2 mb-2 border border-gray-400 shadow-md bg-blue-50 rounded-md"
+          >
+            <option value="km">Kilometers (km)</option>
+            <option value="mi">Miles (mi)</option>
+            <option value="m">Meters (m)</option>
+            <option value="ft">Feet (ft)</option>
+            <option value="cm">Centimeters (cm)</option>
+            <option value="in">Inches (in)</option>
+          </select>
+          <input
+            type="text"
+            name="output"
+            id="output"
+            placeholder="Result will appear here"
+            class="h-9 px-4 py-2 border border-gray-400 shadow-md bg-blue-50 rounded-md"
+          />
+        </div>
+      </div>
     </div>
 
-    
-    <p class="text-md text-gray-600 text-center mb-8">Convert between different units with real-time calculations</p>
-
- 
-    
-    <div class="w-full mb-8">
-      <nav class="flex justify-between bg-gray-100 rounded-xl p-1 space-x-3">
-        <button class="tab-btn flex-1 bg-gradient-to-r from-blue-600 to-violet-500 text-white font-semibold px-6 py-1 rounded-sm shadow transition hover:opacity-90 focus:outline-none" data-tab="length">
-          Length
-        </button>
-        <button class="tab-btn flex-1 bg-gray-100 text-gray-500 font-semibold px-6 py-1 rounded-sm transition hover:bg-gray-200 focus:outline-none" data-tab="temperature">
-          Temperature
-        </button>
-        <button class="tab-btn flex-1 bg-gray-100 text-gray-500 font-semibold px-6 py-1 rounded-sm transition hover:bg-gray-200 focus:outline-none" data-tab="weight">
-          Weight
-        </button>
-        <button class="tab-btn flex-1 bg-gray-100 text-gray-500 font-semibold px-6 py-1 rounded-sm transition hover:bg-gray-200 focus:outline-none" data-tab="time">
-          Time
-        </button>
-      </nav>
-    </div>
-
-  
-<div class="w-full gap-8 mt-7">
-  
-  <div class="flex flex-col w-1/2">
-    <span class="text-sm font-medium mb-2">From</span>
-    <select name="initialVal" id="initialVal" class="h-9 px-4 py-2 mb-2 border border-gray-400 shadow-md bg-blue-50 rounded-md">
-      <option value="km">Kilometers (km)</option>
-      <option value="mi">Miles (mi)</option>
-      <option value="m">Meters (m)</option>
-      <option value="ft">Feet (ft)</option>
-      <option value="cm">Centimeters (cm)</option>
-      <option value="in">Inches (in)</option>
-    </select>
-    <input type="text" name="input" id="input" placeholder="Enter value" class="h-9 px-4 py-2 border border-gray-400 shadow-md bg-blue-50 rounded-md">
-  </div>
-
- 
-  <div class="flex items-center justify-end mb-16" style="margin-right: 90px; margin-top: -60px;">
-    <button class="bg-gradient-to-r from-blue-700 to-violet-500 h-10 w-10 rounded-full flex items-center justify-center text-white shadow-lg cursor-pointer">
-      <i class="fa fa-exchange"></i>
-    </button>
-  </div>
-
-  
-  <div class="flex flex-col w-1/2 ml-auto">
-    <span class="text-md font-medium mb-2">To</span>
-    <select name="convertedVal" id="convertedVal" class="h-9 px-4 py-2 mb-2 border border-gray-400 shadow-md bg-blue-50 rounded-md">
-      <option value="km">Kilometers (km)</option>
-      <option value="mi">Miles (mi)</option>
-      <option value="m">Meters (m)</option>
-      <option value="ft">Feet (ft)</option>
-      <option value="cm">Centimeters (cm)</option>
-      <option value="in">Inches (in)</option>
-    </select>
-    <input type="text" name="output" id="output" placeholder="Result will appear here" class="h-9 px-4 py-2 border border-gray-400 shadow-md bg-blue-50 rounded-md">
-  </div>
-</div>
-
-  </div>
-
-  <script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
