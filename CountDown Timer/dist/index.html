@@ -21,8 +21,131 @@
     </div>
 
     <!-- left panel -->
-    <div class="bg-slate-700 w-90 ml-30 mt-7 rounded-md h-120 shadow-lg">
-      <p>Fabrice</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-11/12 md:w-4/5">
+      <div class="bg-slate-800 rounded-lg p-6 shadow-lg">
+        <div class="text-blue-400 text-3xl flex justify-center mb-4">⏰</div>
+        <h2 class="text-lg font-semibold text-center">Set Timer</h2>
+        <p class="text-slate-400 text-sm text-center mb-4">
+          Choose a preset or set custom time
+        </p>
+
+        <!-- Preset Buttons -->
+        <div class="grid grid-cols-3 gap-2 mb-4">
+          <button class="bg-slate-700 hover:bg-slate-600 py-2 rounded">
+            1 min
+          </button>
+          <button class="bg-slate-700 hover:bg-slate-600 py-2 rounded">
+            5 min
+          </button>
+          <button class="bg-slate-700 hover:bg-slate-600 py-2 rounded">
+            10 min
+          </button>
+          <button class="bg-slate-700 hover:bg-slate-600 py-2 rounded">
+            15 min
+          </button>
+          <button class="bg-slate-700 hover:bg-slate-600 py-2 rounded">
+            30 min
+          </button>
+          <button class="bg-slate-700 hover:bg-slate-600 py-2 rounded">
+            1 hour
+          </button>
+        </div>
+
+        <!-- Custom Time Inputs -->
+        <div class="grid grid-cols-2 gap-2 mb-4">
+          <div>
+            <label class="block text-slate-400 text-xs mb-1">Days</label>
+            <input
+              type="number"
+              value="0"
+              class="w-full bg-slate-700 rounded text-center py-2"
+            />
+          </div>
+          <div>
+            <label class="block text-slate-400 text-xs mb-1">Hours</label>
+            <input
+              type="number"
+              value="0"
+              class="w-full bg-slate-700 rounded text-center py-2"
+            />
+          </div>
+          <div>
+            <label class="block text-slate-400 text-xs mb-1">Minutes</label>
+            <input
+              type="number"
+              value="5"
+              class="w-full bg-slate-700 rounded text-center py-2"
+            />
+          </div>
+          <div>
+            <label class="block text-slate-400 text-xs mb-1">Seconds</label>
+            <input
+              type="number"
+              value="0"
+              class="w-full bg-slate-700 rounded text-center py-2"
+            />
+          </div>
+        </div>
+
+        <!-- Set Timer Button -->
+        <button
+          class="w-full py-2 rounded bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500"
+        >
+          Set Timer
+        </button>
+      </div>
+
+      <!-- Countdown Timer Panel -->
+      <div class="bg-slate-800 rounded-lg p-6 shadow-lg text-center">
+        <h2 class="text-xl font-bold">Countdown Timer</h2>
+        <p class="text-slate-400 text-sm mb-6">5 minutes</p>
+
+        <!-- Countdown Display -->
+        <div class="grid grid-cols-4 gap-4 mb-6">
+          <div class="bg-slate-700 rounded p-4">
+            <p class="text-3xl font-bold">00</p>
+            <p class="text-slate-400 text-xs">DAYS</p>
+          </div>
+          <div class="bg-slate-700 rounded p-4">
+            <p class="text-3xl font-bold">00</p>
+            <p class="text-slate-400 text-xs">HOURS</p>
+          </div>
+          <div class="bg-slate-700 rounded p-4">
+            <p class="text-3xl font-bold">05</p>
+            <p class="text-slate-400 text-xs">MINUTES</p>
+          </div>
+          <div class="bg-slate-700 rounded p-4">
+            <p class="text-3xl font-bold">00</p>
+            <p class="text-slate-400 text-xs">SECONDS</p>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mb-4">
+          <p class="text-slate-400 text-xs mb-1 text-left">Progress</p>
+          <div class="w-full bg-slate-700 h-2 rounded">
+            <div class="bg-blue-500 h-2 rounded w-[0%]"></div>
+          </div>
+          <p class="text-slate-400 text-xs text-right mt-1">0%</p>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex justify-center gap-3">
+          <button
+            class="bg-blue-500 hover:bg-blue-400 px-4 py-2 rounded flex items-center gap-2"
+          >
+            ▶ Start
+          </button>
+          <button
+            class="bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded flex items-center gap-2"
+          >
+            ↻ Reset
+          </button>
+          <button class="bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded">
+            ⚙
+          </button>
+        </div>
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>
